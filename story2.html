@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width">
+  <title>StoryScriber</title>
+  <style>
+      * { font-family: sans-serif; line-height: 20px;}
+      .bold { font-weight: bold; }
+      .logo { font-family: cursive; background-color: indigo; color: white; width: 100%; padding: 1em; }
+      body { margin: 0; }
+  </style>
+</head>
+<body>
+  <h1 class="logo">StoryScriber</h1>
+<div class="bold">
+  Main character:
+  <input id="1character">
+  Male/female: <select id="1characterheshe"><option value="He">Male</option><option value="She">Female</option></select>
+  <br>
+  Main character - ocupation:
+  <input id="1charactertype" placeholder="e.g. policeman,zookeeper,taxi driver"><br>
+  Main character - favourite food:
+  <input id="1characterfood" placeholder="pizza"><br>
+  Main character - favourite activity:
+  <input id="1characteractivity" placeholder="e.g. playing football"><br>
+  Secondary character/friend:
+  <input id="2character">
+  Male/female: <select id="2characterheshe"><option value="He">Male</option><option value="She">Female</option></select><br><br>
+  Three objects (don't include a/an):<br>
+  1) <input id="object1" placeholder="pencil"><br>
+  2) <input id="object2" placeholder="apple"><br>
+</div>
+  <br>
+  <button onclick="make()" class="make">Make</button>
+  <button onclick="location.reload()" style="display:none;" class="new">Make Another</button>
+  <br>
+<p class="story"></p>
+    <script>
+    function make() {
+        if (document.getElementById("1characterheshe").value === "He") {
+          hisorher = "his ";
+          himorher = "him "
+        } else {
+          hisorher = "her ";
+          himorher = "her "
+        }
+        title = "<h1>" + document.getElementById("1character").value + " and the lost " + document.getElementById("object1").value + "</h1><br><br>";
+        story = "One sunny day, " + document.getElementById("1character").value + " the " +  document.getElementById("1charactertype").value + " woke up to find that " + hisorher + document.getElementById("object1").value + " wasn't where it usually was. " + document.getElementById("1characterheshe").value + " searched in " + hisorher + " bedroom, in the cupboard and everywhere else he thought " + hisorher + document.getElementById("object1").value + " might be but all that " + document.getElementById("1characterheshe").value.toLowerCase() + " could find was " + hisorher + "old " + document.getElementById("object2").value + ". " + document.getElementById("1characterheshe").value + " hadn't seen that in a while. <br><br> 'I'm determined to find my lost " + document.getElementById("object1").value + ",' " + document.getElementById("1characterheshe").value.toLowerCase() + " said to himself, 'Let's phone a friend to help!'. So " + document.getElementById("1character").value + " the " +  document.getElementById("1charactertype").value + " rang his best friend " + document.getElementById("2character").value + " and asked him to try and find the " + document.getElementById("object1").value + ". Not long after, " + hisorher + "friend " + document.getElementById("2character").value + " arrived and the two of them began searching but still they couldn't find it. <br><br> By now, " + document.getElementById("1character").value + " had began to think that he would never see " + hisorher + document.getElementById("object1").value + " again. " + document.getElementById("2character").value + " told " + himorher + "not too worry. 'I'm sure it'll turn up soon,' " + document.getElementById("1characterheshe").value.toLowerCase() + " said, 'Now, let's go and have some " + document.getElementById("1characterfood").value + "!'. They made their way to the kitchen to cook the " + document.getElementById("1characterfood").value + ". It was delicous! When " + document.getElementById("1character").value + " went to put " + hisorher + "plate in the dishwasher, " + document.getElementById("1characterheshe").value.toLowerCase() + " saw something out of the corner of " + hisorher + " eye. It was the missing " + document.getElementById("object1").value + "! " + document.getElementById("1character").value + " was very glad! Now he could finally start doing " + hisorher + "favourite activity, " + document.getElementById("1characteractivity").value + ".";
+        
+        document.querySelector(".story").innerHTML = title + story;
+        document.querySelector(".bold").style.display = "none";
+        document.querySelector(".make").style.display = "none";
+        document.querySelector(".make").style.display = "none";
+        document.querySelector(".new").style.display = "block";
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width">
+  <title>StoryScriber</title>
+  <style>
+      * { font-family: sans-serif; line-height: 20px;}
+      .bold { font-weight: bold; }
+      .logo { font-family: cursive; background-color: indigo; color: white; width: 100%; padding: 1em; }
+      body { margin: 0; }
+  </style>
+</head>
+<body>
+  <h1 class="logo">StoryScriber</h1>
+<div class="bold">
+  Main character:
+  <input id="1character">
+  Male/female: <select id="1characterheshe"><option value="He">Male</option><option value="She">Female</option></select>
+  <br>
+  Main character - type of creature
+  <input id="1charactertype" placeholder="e.g. man,woman,dog,cat"><br>
+  Main character - favourite food:
+  <input id="1characterfood" placeholder="pizza"><br>
+  Main character - favourite activity:
+  <input id="1characteractivity" placeholder="e.g. playing football"><br>
+  Secondary character/friend:
+  <input id="2character"><br>
+  Villain:
+  <input id="villain"><br><br>
+  Three objects (must begin with the following - a/an):<br>
+  1) a <input id="object1" placeholder="pencil"><br>
+  2) an <input id="object2" placeholder="apple"><br>
+  3) a <input id="object3" placeholder="book"><br>
+  <br>
+  
+  Three verbs:<br>
+  1) present tense: <input id="verb1" placeholder="e.g. jumping"><br>
+  2) past tense: <input id="verb2" placeholder="e.g. ran"><br>
+  3) present tense: <input id="verb3">
+</div>
+  <br>
+  <button onclick="make()" class="make">Make</button>
+  <button onclick="location.reload()" style="display:none;" class="new">Make Another</button>
+  <br>
+<p class="story"></p>
+    <script>
+    function make() {
+        title = "<h1>" + document.getElementById("1character").value + " and the incredible " + document.getElementById("object1").value + "</h1><br><br>";
+        story = "Once upon a time there lived a " + document.getElementById("1charactertype").value + " called " +  document.getElementById("1character").value + ". " + document.getElementById("1characterheshe").value + " really liked eating " + document.getElementById("1characterfood").value + " and " + document.getElementById("1characteractivity").value + " all day long. But one day an evil villain named " + document.getElementById("villain").value + " stole " +  document.getElementById("1character").value + "'s favourite " + document.getElementById("object1").value + " and " + document.getElementById("1characterheshe").value.toLowerCase() + " was very sad! <br><br>However " +  document.getElementById("1character").value + " was smart and came up with a plan involving an " + document.getElementById("object2").value + " and a " + document.getElementById("object3").value + ". Once " + document.getElementById("villain").value + " heard about the plan, he became very angry and started " + document.getElementById("verb1").value + "! " + document.getElementById("1character").value + " and " + document.getElementById("2character").value + " " + document.getElementById("verb2").value + " into the villain's house and took back the " + document.getElementById("object1").value + "! <br><br>&ldquo;Yeah! You stole it but we got it back, and now we will call the police!&ldquo; They both ran as fast as their legs could carry them, until they reached the police station. <br> 'PC Plum!' shouted " + document.getElementById("1character").value + ", 'We need your help to arrest the evil villain " + document.getElementById("villain").value + " from stealing anybody elses prized possesions. Thankfully, we got my favourite " + document.getElementById("object1").value + " back but some other people may not be so lucky.'";
+        
+        document.querySelector(".story").innerHTML = title + story;
+        document.querySelector(".bold").style.display = "none";
+        document.querySelector(".make").style.display = "none";
+        document.querySelector(".make").style.display = "none";
+        document.querySelector(".new").style.display = "block";
+    }
+    </script>
+</body>
+</html>
