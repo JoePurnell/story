@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width">
+  <title>StoryScriber</title>
+  <style>
+      * { font-family: sans-serif; line-height: 20px;}
+      .bold { font-weight: bold; }
+      .logo { font-family: cursive; background-color: indigo; color: white; width: 100%; padding: 1em; }
+      body { margin: 0; }
+      a { text-decoration: none; color: black; }
+  </style>
+</head>
+<body>
+  <h1 class="logo">StoryScriber</h1>
+  <a href="index.html">Choose another story</a>
+<div class="bold">
+  Main character: Captain 
+  <input id="1character">
+  Male/female: <select id="1characterheshe"><option value="He">Male</option><option value="She">Female</option></select>
+  <br>
+  Main character - ocupation:
+  <input id="1charactertype" placeholder="e.g. policeman,zookeeper,taxi driver"><br>
+  Main character - favourite food:
+  <input id="1characterfood" placeholder="pizza"><br>
+  Main character - favourite activity:
+  <input id="1characteractivity" placeholder="e.g. playing football"><br>
+  Secondary character/friend:
+  <input id="2character">
+  Male/female: <select id="2characterheshe"><option value="He">Male</option><option value="She">Female</option></select><br><br>
+  Five objects (don't include a/an):<br>
+  1) <input id="object1" placeholder="pencil"><br>
+  2) <input id="object2" placeholder="apple"><br>
+  3) <input id="object3" placeholder="apple"><br>
+  4) <input id="object4" placeholder="pencil"><br><br>
+  Three adjectives:<br>
+  1) <input id="adj1" placeholder="big"><br>
+  2) <input id="adj2" placeholder="amazing"><br>
+  3) <input id="adj3" placeholder="great"><br><br>
+  Other:<br>
+  1) Captain's weapon <input id="weapon" placeholder="sword"><br>
+  2) Emotion <input id="emotion" placeholder="happy"><br>
+  3) Place <input id="place" placeholder="London"><br><br>
+  4) Past-tense verb <input id="verb" placeholder="jumped"><br>
+</div>
+  <br>
+  <button onclick="make()" class="make">Make</button>
+  <button onclick="location.reload()" style="display:none;" class="new">Make Another</button>
+  <br>
+<p class="story"></p>
+    <script>
+    function make() {
+        if (document.getElementById("1characterheshe").value === "He") {
+          hisorher = "his ";
+          himorher = "him "
+        } else {
+          hisorher = "her ";
+          himorher = "her "
+        }
+        title = "<h1>Captain " + document.getElementById("1character").value + "</h1><br><br>";
+        
+        story = "Once there was a pirate called Captain" + document.getElementById("1character").value + ", and he lived on the " + document.getElementById("adj1").value + " " + document.getElementById("object1").value + " the finest ship on the seas, and on it flied the " + document.getElementById("emotion").value + " " + document.getElementById("2character").value + ". One day he was lazing on his favourite " + document.getElementById("object2").value + " when he " + document.getElementById("verb").value + " in surprise. It was the " + document.getElementById("adj2").value + " " + document.getElementById("object3").value + ", Captain " + document.getElementById("1character").value + "’s worst enemy’s ship. “Quickly, man the " + document.getElementById("weapon").value + "s“. They aimed and fired at the "+ document.getElementById("adj2").value + " " + document.getElementById("object3").value +" blasting it to "+ document.getElementById("place").value + ". Captain "+ document.getElementById("1character").value +" now relaxed on his favourite "+ document.getElementById("object1").value +"!";
+        
+        document.querySelector(".story").innerHTML = title + story;
+        document.querySelector(".bold").style.display = "none";
+        document.querySelector(".make").style.display = "none";
+        document.querySelector(".make").style.display = "none";
+        document.querySelector(".new").style.display = "block";
+    }
+    </script>
+</body>
+</html>
