@@ -3,19 +3,13 @@
 <head>
   <meta name="viewport" content="width=device-width">
   <title>StoryScriber</title>
-  <style>
-      * { font-family: sans-serif; line-height: 20px;}
-      .bold { font-weight: bold; }
-      .logo { font-family: cursive; background-color: indigo; color: white; width: 100%; padding: 1em; }
-      body { margin: 0; }
-      a { text-decoration: none; color: black; }
-  </style>
+  <link href="style.css" rel="stylesheet">
 </head>
 <body>
   <h1 class="logo">StoryScriber</h1>
   <a href="index.html">Choose another story</a>
 <div class="bold">
-  Main character: Captain 
+  Main character: Captain
   <input id="1character">
   Male/female: <select id="1characterheshe"><option value="He">Male</option><option value="She">Female</option></select>
   <br>
@@ -58,9 +52,9 @@
           himorher = "her "
         }
         title = "<h1>Captain " + document.getElementById("1character").value + "</h1><br><br>";
-        
+
         story = "Once there was a pirate called Captain" + document.getElementById("1character").value + ", and he lived on the " + document.getElementById("adj1").value + " " + document.getElementById("object1").value + " the finest ship on the seas, and on it flied the " + document.getElementById("emotion").value + " " + document.getElementById("2character").value + ". One day he was lazing on his favourite " + document.getElementById("object2").value + " when he " + document.getElementById("verb").value + " in surprise. It was the " + document.getElementById("adj2").value + " " + document.getElementById("object3").value + ", Captain " + document.getElementById("1character").value + "’s worst enemy’s ship. “Quickly, man the " + document.getElementById("weapon").value + "s“. They aimed and fired at the "+ document.getElementById("adj2").value + " " + document.getElementById("object3").value +" blasting it to "+ document.getElementById("place").value + ". Captain "+ document.getElementById("1character").value +" now relaxed on his favourite "+ document.getElementById("object1").value +"!";
-        
+
         document.querySelector(".story").innerHTML = title + story;
         document.querySelector(".bold").style.display = "none";
         document.querySelector(".make").style.display = "none";
