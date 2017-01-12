@@ -11,17 +11,8 @@
 <div class="bold">
   Main character: Captain
   <input id="1character">
-  Male/female: <select id="1characterheshe"><option value="He">Male</option><option value="She">Female</option></select>
-  <br>
-  Main character - ocupation:
-  <input id="1charactertype" placeholder="e.g. policeman,zookeeper,taxi driver"><br>
-  Main character - favourite food:
-  <input id="1characterfood" placeholder="pizza"><br>
-  Main character - favourite activity:
-  <input id="1characteractivity" placeholder="e.g. playing football"><br>
   Secondary character/friend:
   <input id="2character">
-  Male/female: <select id="2characterheshe"><option value="He">Male</option><option value="She">Female</option></select><br><br>
   Five objects (don't include a/an):<br>
   1) <input id="object1" placeholder="pencil"><br>
   2) <input id="object2" placeholder="apple"><br>
@@ -53,7 +44,7 @@
         }
         title = "<h1>Captain " + document.getElementById("1character").value + "</h1><br><br>";
 
-        story = "Once there was a pirate called Captain" + document.getElementById("1character").value + ", and he lived on the " + document.getElementById("adj1").value + " " + document.getElementById("object1").value + " the finest ship on the seas, and on it flied the " + document.getElementById("emotion").value + " " + document.getElementById("2character").value + ". One day he was lazing on his favourite " + document.getElementById("object2").value + " when he " + document.getElementById("verb").value + " in surprise. It was the " + document.getElementById("adj2").value + " " + document.getElementById("object3").value + ", Captain " + document.getElementById("1character").value + "’s worst enemy’s ship. “Quickly, man the " + document.getElementById("weapon").value + "s“. They aimed and fired at the "+ document.getElementById("adj2").value + " " + document.getElementById("object3").value +" blasting it to "+ document.getElementById("place").value + ". Captain "+ document.getElementById("1character").value +" now relaxed on his favourite "+ document.getElementById("object1").value +"!";
+        story = "Once there was a pirate called Captain " + document.getElementById("1character").value + ", and he lived on the " + document.getElementById("adj1").value + " " + document.getElementById("object1").value + " the finest ship on the seas, and on it flied the " + document.getElementById("emotion").value + " " + document.getElementById("2character").value + ". One day he was lazing on his favourite " + document.getElementById("object2").value + " when he " + document.getElementById("verb").value + " in surprise. It was the " + document.getElementById("adj2").value + " " + document.getElementById("object3").value + ", Captain " + document.getElementById("1character").value + "’s worst enemy’s ship. “Quickly, man the " + document.getElementById("weapon").value + "s“. They aimed and fired at the "+ document.getElementById("adj2").value + " " + document.getElementById("object3").value +" blasting it to "+ document.getElementById("place").value + ". Captain "+ document.getElementById("1character").value +" now relaxed on his favourite "+ document.getElementById("object1").value +"!";
 
         document.querySelector(".story").innerHTML = title + story;
         document.querySelector(".bold").style.display = "none";
