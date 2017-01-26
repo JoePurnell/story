@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Vampiro+One');
 
-* { font-family: sans-serif; line-height: 20px;}
+* { font-family: Georgia; line-height: 20px;}
 .bold { font-weight: bold; }
 .logo { font-family: "Vampiro One"; background-color: indigo; color: white; width: 100%; padding: 1em; }
 body { margin: 0 !important; padding: 0 !important; }
 a { text-decoration: none; color: black;}
 h1 { padding-top: 0; margin-top: 0; }
-table, td { padding: 5px; }
-table { margin-left: 1em; }
+table, td { padding: 5px; border-collapse: collapse; }
+table { margin-left: 1em; border-collapse: collapse; }
+td { margin: 0; border: 1px solid lightgrey; }
 input[type="submit"], button { background-color: indigo; border-radius: 5px; color: white; border: none; }
